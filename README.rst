@@ -1,5 +1,10 @@
-PDF Reader
+PDF 
 =================================================================================
+
+.. contents:: **Daftar Isi**
+
+PDF Reader
+---------------------------------------------------------------------------------
 
 - `Zathura <https://pwmt.org/projects/zathura/>`_
    + untuk Linux
@@ -13,4 +18,25 @@ PDF Reader
       - f: toogle fullscreen
       - Z: fit page size to window
       - r: reload document
+
+PDF Tool
+---------------------------------------------------------------------------------
+
+Combine 2 buah pdf file
+*********************************************************************************
+
+::
+
+	pdfunite contoh1.pdf contoh2.pdf result.pdf
+
+Combine semua pdf di dalam folder
+*********************************************************************************
+
+::
+
+	pdfunite *.pdf result.pdf
+
+
+
+
 
