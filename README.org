@@ -1,0 +1,33 @@
+#+STARTUP: overview
+
+* PDF Reader
+
+- [[https://pwmt.org/projects/zathura/][Zathura]]
+   + untuk Linux
+   + memiliki key binding seperti vim
+- [[https://www.mupdf.com/][mupdf]]
+   + untuk Linux, Windows, MacOS
+   + tidak perlu close aplikasi ketika compile tex; cukup reload document
+   + [[https://mupdf.com/docs/manual-mupdf-gl.html][key bindings]] yang sering saya gunakan:
+      - [number]g: go to page number
+      - f: toogle fullscreen
+      - Z: fit page size to window
+      - r: reload document
+
+* PDF Combine
+** Combine 2 buah pdf file
+
+: pdfunite contoh1.pdf contoh2.pdf result.pdf
+
+** Combine semua pdf di dalam folder
+
+: pdfunite *.pdf result.pdf
+
+
+
+* PDF Compress
+
+Menggunakan command ghostscript.
+
+: gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+: -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
