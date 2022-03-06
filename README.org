@@ -14,23 +14,38 @@
       - Z: fit page size to window
       - r: reload document
 
-* PDF Combine
-** Combine 2 buah pdf file
+* Combine
+** pdfunite
+*** Combine 2 buah pdf file
 
-: pdfunite contoh1.pdf contoh2.pdf result.pdf
+ : pdfunite contoh1.pdf contoh2.pdf result.pdf
 
-** Combine semua pdf di dalam folder
+*** Combine semua pdf di dalam folder
 
-: pdfunite *.pdf result.pdf
+ : pdfunite *.pdf result.pdf
 
+** pdftk 
 
-* PDF Compress
+: pdftk file1.pdf file2.pdf cat output newfile.pdf
+
+atau
+
+: pdftk *.pdf cat output newfile.pdf
+
+* Merge
+
+  Merge spesifik halaman pdf dari 2 buah pdf file yang berbeda.
+
+: pdftk A=one.pdf B=two.pdf cat A1-7 B1-5 A8 output combined.pdf
+
+* Extract
+
+: pdftk file.pdf cat 4-6 output out1.pdf
+
+* Compress
 
 Menggunakan command ghostscript.
 
 : gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
 : -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
 
-* PDF Split and Merge
-
-- PDFSAM  
