@@ -15,20 +15,15 @@
       - r: reload document
 
 * Combine
-** pdfunite
-*** Combine 2 buah pdf file
+** Combine 2 buah pdf file
 
- : pdfunite contoh1.pdf contoh2.pdf result.pdf
-
-*** Combine semua pdf di dalam folder
-
- : pdfunite *.pdf result.pdf
-
-** pdftk 
+: pdfunite contoh1.pdf contoh2.pdf result.pdf
 
 : pdftk file1.pdf file2.pdf cat output newfile.pdf
 
-atau
+** Combine semua pdf di dalam folder
+
+: pdfunite *.pdf result.pdf
 
 : pdftk *.pdf cat output newfile.pdf
 
@@ -49,3 +44,13 @@ Menggunakan command ghostscript.
 : gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
 : -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
 
+
+* Show Fonts
+
+: pdffonts file.pdf
+
+* Embed Fonts
+
+: gs -q -dNOPAUSE -dBATCH -dPDFSETTINGS=/prepress -sDEVICE=pdfwrite -sOutputFile=output.pdf input.pdf
+
+: $ gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=<output file> -c ".setpdfwrite <</NeverEmbed [ ]>> setdistillerparams" -f <input file>
